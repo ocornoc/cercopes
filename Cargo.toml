@@ -1,9 +1,6 @@
 [workspace]
 members = [
-	"cercopes_dialog",
-	"cercopes_knowledge",
-	"cercopes_dialog_test",
-	"cercopes_mlua",
+	"cercopes*",
 ]
 
 [profile.release]
