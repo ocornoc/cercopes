@@ -1,0 +1,15 @@
+[package]
+name = "cercopes_dialog"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+#default = ["send_sync"]
+send_sync = []
+
+[dependencies]
+derive_more = "0.99.17"
+ahash = {version = "0.7.6", features = ["serde"]}
+rand = {version = "0.8.4", features = ["serde1"]}
+serde = {version = "1.0.131", features = ["derive"]}
+dyn-clone = "1.0.5"

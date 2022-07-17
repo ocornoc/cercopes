@@ -1,0 +1,12 @@
+[package]
+name = "cercopes_mlua"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cercopes_dialog = { path = "../cercopes_dialog", default-features = false }
+cercopes_knowledge = { path = "../cercopes_knowledge" }
+mlua = { version = "0.8.0", features = ["luajit", "vendored"] }
+derive_more = "0.99.17"
+rand = "0.8.5"
+ahash = "0.7.6"

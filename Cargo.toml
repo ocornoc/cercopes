@@ -1,0 +1,12 @@
+[workspace]
+members = [
+	"cercopes_dialog",
+	"cercopes_knowledge",
+	"cercopes_dialog_test",
+	"cercopes_mlua",
+]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+strip = "symbols"

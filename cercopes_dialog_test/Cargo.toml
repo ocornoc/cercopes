@@ -1,0 +1,13 @@
+[package]
+name = "cercopes_dialog_test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cercopes_dialog = { path = "../cercopes_dialog" }
+cercopes_knowledge = { path = "../cercopes_knowledge" }
+cercopes_mlua = { path = "../cercopes_mlua" }
+derive_more = "0.99.17"
+const-random = "0.1.13"
+rand = "0.8.5"
+mlua = { version = "0.8.0", features = ["luajit", "vendored"] }
