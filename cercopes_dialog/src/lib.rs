@@ -20,7 +20,7 @@ mod conversation;
 mod expander;
 pub mod goal;
 
-type Rng = StdRng;
+type Rng = rand_xoshiro::Xoroshiro64Star;
 
 mod _private {
     #[cfg(not(feature = "send_sync"))]

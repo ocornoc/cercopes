@@ -33,7 +33,7 @@ impl ToLua<'_> for LuaEditHMF {
             lua.create_function(move |_, (state, hmove)| {
                 let mut state = LuaConversation::borrow_mut(&state);
                 let mut hmove = LuaHistoricalMove::borrow_mut(&hmove);
-                Ok(edit(&mut state, &mut StdRng::from_entropy(), &mut hmove))
+                Ok(edit(&mut state, &mut SeedableRng::from_entropy(), &mut hmove))
             }).map(LuaValue::Function)
         } else {
             Ok(Nil)
@@ -68,7 +68,7 @@ impl ToLua<'_> for LuaMoveNodeFormatter {
         lua.create_function(move |_, (state, pieces)| {
             let state = LuaConversation::borrow(&state);
             let pieces = LuaTable::sequence_values(pieces).collect::<LuaResult<_>>()?;
-            Ok((self.0)(&state, &mut StdRng::from_entropy(), pieces))
+            Ok((self.0)(&state, &mut SeedableRng::from_entropy(), pieces))
         }).map(LuaValue::Function)
     }
 }
