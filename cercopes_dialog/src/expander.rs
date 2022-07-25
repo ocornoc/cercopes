@@ -461,11 +461,10 @@ impl<D: DialogTrait> ExpansionTree<'_, D> {
             part.create_historical(conversation, rng, historical_move);
         }
 
-        if conversation.speaker == Speaker::Person0 {
-            &mut historical_move.person0_obligations.addressed
-        } else {
-            &mut historical_move.person1_obligations.addressed
-        }.extend(self.move_node.dialog_moves.iter().cloned());
+        historical_move
+            .get_my_obligations()
+            .addressed
+            .extend(self.move_node.dialog_moves.iter().cloned());
         historical_move.topic_state.addressed.extend(
             self.move_node.addressed_topics.iter().cloned(),
         );
