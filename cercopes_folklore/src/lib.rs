@@ -47,7 +47,7 @@ pub trait FolkloreTrait {
 }
 
 pub trait MotifBuilder<F: FolkloreTrait>: MaybeSendSync {
-    fn begin_story(
+    fn continue_story(
         &self,
         manager: &FolkloreManager<F>,
         rng: &mut Rng,
@@ -195,7 +195,7 @@ impl<F: FolkloreTrait> FolkloreManager<F> {
         builders.shuffle(rng);
 
         for builder in builders {
-            if let Some(motif) = builder.begin_story(self, rng, lore, story) {
+            if let Some(motif) = builder.continue_story(self, rng, lore, story) {
                 story.plot.push(motif);
                 return true;
             }
