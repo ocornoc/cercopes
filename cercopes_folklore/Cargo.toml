@@ -1,0 +1,13 @@
+[package]
+name = "cercopes_folklore"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+#default = ["send_sync"]
+send_sync = []
+
+[dependencies]
+ahash = "0.7.6"
+rand = "0.8.5"
+rand_xoshiro = "0.6.0"
