@@ -39,7 +39,7 @@ mod _private {
 pub trait FolkloreTrait {
     type Character: Clone + Eq + Hash + MaybeSendSync;
 
-    type FolkLoreData: MaybeSendSync;
+    type FolkloreData: MaybeSendSync;
 
     type StoryData: MaybeSendSync;
 
@@ -143,7 +143,7 @@ where
 pub struct Folklore<F: FolkloreTrait> {
     pub characters: AHashSet<F::Character>,
     pub stories: Vec<Story<F>>,
-    pub data: F::FolkLoreData,
+    pub data: F::FolkloreData,
 }
 
 impl<F: FolkloreTrait> Clone for Folklore<F>
@@ -151,7 +151,7 @@ where
     F::Character: Clone,
     F::MotifData: Clone,
     F::StoryData: Clone,
-    F::FolkLoreData: Clone,
+    F::FolkloreData: Clone,
 {
     fn clone(&self) -> Self {
         Folklore {
@@ -173,7 +173,7 @@ where
     F::Character: Debug,
     F::MotifData: Debug,
     F::StoryData: Debug,
-    F::FolkLoreData: Debug,
+    F::FolkloreData: Debug,
 {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
         f
